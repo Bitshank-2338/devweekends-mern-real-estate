@@ -1,0 +1,25 @@
+{
+  "name": "estatenest-server",
+  "version": "1.0.0",
+  "description": "EstateNest backend - Express + MongoDB real-estate API with JWT auth and five CRUD resources",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/seed/seedProperties.js"
+  },
+  "keywords": ["express", "mongodb", "mongoose", "jwt", "mern", "real-estate"],
+  "author": "Shashank",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2"
+  }
+}

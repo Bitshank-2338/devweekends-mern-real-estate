@@ -1,0 +1,21 @@
+# Render Blueprint for the EstateNest API.
+services:
+  - type: web
+    name: estatenest-api
+    runtime: node
+    plan: free
+    rootDir: server
+    # Seeding only replaces the demo accounts' data, so it is safe to run on every deploy.
+    buildCommand: npm install && npm run seed
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      # Entered in the Render dashboard, never committed.
+      - key: MONGO_URI
+        sync: false
+      - key: CLIENT_URL
+        value: http://localhost:5173

@@ -2,8 +2,8 @@
 
 > Find a place that feels like home.
 
-**Live demo:** _add Vercel URL after deployment_
-**API:** _add Render URL after deployment_ (free Render instance, the first request after idle can take ~50s)
+**Live demo:** https://estatenest-kappa.vercel.app
+**API:** https://estatenest-api-1m8i.onrender.com/api/properties (free Render instance, the first request after idle can take ~50s)
 
 ## About
 

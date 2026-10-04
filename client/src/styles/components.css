@@ -1,0 +1,277 @@
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+}
+
+.empty-state {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* ---------- Property card ---------- */
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(29, 38, 33, 0.06), 0 16px 32px rgba(29, 38, 33, 0.1);
+}
+
+.property-card-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-tint);
+}
+
+/* Absolute positioning stops tall photos from stretching the card. */
+.property-card-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-card-image .badge {
+  z-index: 1;
+}
+
+.badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge-inline {
+  position: static;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.badge-sale {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.badge-rent {
+  background: var(--color-accent);
+  color: #2b1a07;
+}
+
+.badge-featured {
+  left: auto;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
+}
+
+.property-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.property-card-body p {
+  margin-bottom: 0.4rem;
+}
+
+.property-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.property-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.property-stats li {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-tint);
+  font-size: 0.825rem;
+}
+
+.property-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* ---------- Categories + benefits ---------- */
+
+.category-tile {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 1;
+  padding: 0.9rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.category-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 25, 20, 0.75), rgba(10, 25, 20, 0.05) 65%);
+  transition: background 0.2s ease;
+}
+
+.category-tile:hover::before {
+  background: linear-gradient(to top, rgba(31, 92, 74, 0.85), rgba(31, 92, 74, 0.2));
+}
+
+.category-tile span {
+  position: relative;
+}
+
+.benefit {
+  padding: 1.5rem;
+  border-top: 3px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+}
+
+.benefit p {
+  margin: 0;
+}
+
+/* ---------- Agent card ---------- */
+
+.agent-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.details-sidebar .agent-card,
+.agent-profile .agent-card,
+.dashboard-grid .agent-card {
+  padding: 0;
+  border: 0;
+}
+
+.agent-card h3 {
+  margin-bottom: 0.15rem;
+}
+
+.agent-card h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.agent-card h3 a:hover {
+  color: var(--color-primary);
+}
+
+.agent-card p {
+  margin-bottom: 0.25rem;
+}
+
+.agent-card-body {
+  min-width: 0;
+}
+
+.avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.agent-contact {
+  margin: 0.5rem 0;
+  overflow-wrap: anywhere;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.tag-list li {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: #7a4a17;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.agent-profile {
+  margin-bottom: 2rem;
+}
+
+.agent-bio {
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+}
+
+/* ---------- Filters ---------- */
+
+.filters {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.filter-actions {
+  display: grid;
+  gap: 0.5rem;
+}
